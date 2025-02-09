@@ -1,0 +1,187 @@
+/* General Styles */
+.about-container {
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+.about-hero {
+    background-color: rgba(206, 199, 180, 0.01);
+    text-align: center;
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(206, 199, 180, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+.about-subtitle {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+/* Add background animation to Hero */
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            rgba(206, 199, 180,.3) 0px,
+            rgba(206, 199, 180, .3) 40px,
+            transparent 40px,
+            transparent 80px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(206, 199, 180, .3) 0px,
+            rgba(206, 199, 180, .3) 40px,
+            transparent 40px,
+            transparent 80px
+        );
+    z-index: -1;
+    animation: pan 60s linear infinite;
+}
+
+@keyframes pan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Content Section */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2rem 1rem;
+}
+
+/* Card Styling for Content */
+.about-card-title {
+    font-size: 2rem;
+    color:var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.about-card-text {
+    font-size: 1rem;
+    color: var(--dark-text);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* List for offerings */
+.about-card-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-card-list li {
+    font-size: 1rem;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.about-card-list li strong {
+    color: var(--accent-color);
+}
+
+/* Call to Action Section */
+.about-cta {
+    background-color: rgba(206, 199, 180, 0.08);
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.about-cta .about-card-title {
+    font-size: 2.2rem;
+    color: var(--dark-text);
+}
+
+.about-cta .about-card-text {
+    font-size: 1.1rem;
+    color: var(--dark-text);
+    margin-top: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.about-footer {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--transition-time) ease;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-card-title {
+        font-size: 1.8rem;
+    }
+
+    .about-card-text {
+        font-size: 0.95rem;
+    }
+
+    .about-cta {
+        padding: 3rem 1rem;
+    }
+
+    .features-section {
+        grid-template-columns: 1fr;
+    }
+}

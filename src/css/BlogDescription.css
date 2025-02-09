@@ -1,0 +1,73 @@
+.Main-page{
+
+.blog-content-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+  
+  .blog-Heading {
+    font-size: 38px;
+    color: #222;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .blog-Img {
+    width: 100%;
+    max-height: 500px;
+    object-fit:contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .blog-date {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+  
+  .blog-Info {
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1100px;
+    margin: 0 auto;
+    white-space: pre-line; /* Preserves line breaks */
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 60px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .blog-Heading {
+      font-size: 32px;
+    }
+  
+    .blog-Info {
+      font-size: 18px;
+    }
+  
+    .blog-Img {
+      max-height: 350px;
+    }
+  }
+  
+
+  .blog-Info {
+    white-space: pre-wrap; /* This will preserve whitespace and newlines */
+    word-wrap: break-word; /* Optional: ensures long words break to the next line */
+  }
+  
+  
+}

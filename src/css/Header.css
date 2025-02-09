@@ -1,0 +1,69 @@
+.Top-Container {
+    font-size: 20px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgb(206, 199, 180);
+    justify-content: space-between; /* Ensures space is between nav and social icons */
+}
+
+.Manvir {
+
+    display: flex;
+    font-weight: normal;
+}
+
+.top-heading {
+    display: flex;
+    margin-left: 2%;
+}
+
+.top-heading img {
+    margin-top: 18px;
+    width: 1%;
+    height: 2%; /* Ensure aspect ratio is maintained */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    font-size: large;
+    margin-left: 0;
+    list-style: none; /* Remove bullet points */
+    gap: 15px; /* Space between links */
+}
+
+.nav-links .active {
+    font-weight: bold;
+    color: rgb(60, 59, 54); /* Choose your desired color */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underline */
+    color: rgb(0, 0, 0); /* Light text color */
+    padding: 8px 10px; /* Padding for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.nav-links a:hover {
+    color: rgb(247, 239, 218); /* Change text color on hover */
+}
+
+/* Move social icons to the extreme right */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 20px;
+}
+
+.social-icons a {
+    font-size: 24px; /* Size of the icons */
+    color: rgb(108, 108, 108); /* Icon color */
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: rgb(247, 239, 218); /* Icon color on hover */
+}

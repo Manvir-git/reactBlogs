@@ -1,0 +1,291 @@
+/* Home.css */
+:root {
+    --header-color: rgb(206, 199, 180);
+    --accent-color: #5d6964;
+    --dark-text: #3a3a3a;
+    --light-text: #f8f9fa;
+    --transition-time: 0.4s;
+    --page-bg: #f9f8f6;
+  }
+  
+  /* Add global background */
+  body {
+    background: var(--page-bg);
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        rgb(206, 199, 180, 0.1) 0px,
+       rgb(206, 199, 180, 0.1) 40px,
+        transparent 40px,
+        transparent 80px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(206, 199, 180, 0.1) 0px,
+        rgba(206, 199, 180, 0.1) 40px,
+        transparent 40px,
+        transparent 80px
+      );
+    z-index: -1;
+    animation: pan 60s linear infinite;
+  }
+  
+  @keyframes pan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  
+  /* Add particle overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 30% 70%, rgba(206, 199, 180, 0.4) 0%, transparent 15%),
+      radial-gradient(circle at 80% 30%, rgba(206, 199, 180, 0.4) 0%, transparent 15%);
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  /* Modify home-container */
+  .home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    margin-bottom: 20px;
+  }
+  /* Hero Section */
+.hero-section {
+    background-color: rgba(206, 199, 180, 0.1);
+    text-align: center;
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(206, 199, 180, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Add these new background styles */
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        rgba(206, 199, 180, 5) 0px,
+        rgba(206, 199, 180, 5) 10px,
+        transparent 10px,
+        transparent 20px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgb(175, 164, 136) 0px,
+        rgb(160, 148, 118) 10px,
+        transparent 10px,
+        transparent 20px
+      );
+    z-index: -1;
+    animation: float 20s linear infinite;
+  }
+  
+  @keyframes float {
+    0% { background-position: 0 0; }
+    100% { background-position: 400px 400px; }
+  }
+  
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, 
+      rgba(255, 255, 255, 0.8) 0%, 
+      rgb(156, 140, 96) 100%
+    );
+    z-index: -1;
+  }
+  
+
+
+  .hero-text, .blog-title, .brand-accent, .brand-tagline, 
+.cta-button, .section-title, .feature-card h4, .topic-card h4 {
+    position: relative;
+    z-index: 2;
+    color: var(--dark-text);
+}
+  .header-container {
+    margin-bottom: 2.5rem;
+  }
+  
+  .blog-title {
+    
+    font-size: 2.2rem;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+  
+  .dsa-branding {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .brand-accent {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--accent-color);
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.03em;
+  }
+  
+  .brand-tagline {
+    font-size: 1.8rem;
+    color: var(--dark-text);
+    margin: 0.5rem 0;
+    font-weight: 600;
+  }
+  
+  .hero-text {
+    font-size: 1.1rem;
+    color: var(--dark-text);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* CTA Button */
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    margin-top: 2rem;
+  }
+  
+  .cta-button:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 4rem 0;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .feature-card {
+    padding: 2rem;
+    border-radius: 10px;
+    background: rgba(206, 199, 180, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Topics Section */
+ 
+  
+  .section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #515c57;
+    margin-bottom: 3rem;
+  }
+  
+  .topics-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .topic-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(206, 199, 180, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .topic-card:hover {
+    background: rgba(206, 199, 180, 0.05);
+  }
+  
+  .topic-card h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .topic-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+  /* Animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--transition-time) ease;
+  }
+  
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 768px) {
+    .brand-accent {
+      font-size: 3.5rem;
+    }
+    
+    .features-section {
+      grid-template-columns: 1fr;
+    }
+  }
